@@ -7,6 +7,21 @@
 
 import UIKit
 
+// MARK: - Protocol
+protocol InitialSceneViewDelegate: NSObjectProtocol {
+    func proceedToGreetingScene(with name: String)
+}
+
+// MARK: - Implementation
+extension InitialSceneViewController: InitialSceneViewDelegate {
+    func proceedToGreetingScene(with name: String) {
+        let greetingSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "GreetingScene") as! GreetingSceneViewController
+        greetingSceneViewController.name = name
+        self.present(greetingSceneViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - View
 class InitialSceneViewController: UIViewController {
     let presenter = InitialScenePresenter()
     
@@ -22,15 +37,6 @@ class InitialSceneViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.initialSceneViewDelegate = self
-    }
-}
-
-// MARK: - Extensions
-extension InitialSceneViewController: InitialSceneViewDelegate {
-    func proceedToGreetingScene(with name: String) {
-        let greetingSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "GreetingScene") as! GreetingSceneViewController
-        greetingSceneViewController.name = name
-        navigationController?.pushViewController(greetingSceneViewController, animated: true)
+        presenter.viewDelegate = self
     }
 }

@@ -7,13 +7,8 @@
 
 import Foundation
 
-// MARK: - Protocols
-protocol GreetingSceneViewDelegate: NSObjectProtocol {
-    func presentGreeting(with name: String)
-}
-
-// MARK: - Implementations
-class GreetingScenePresenter {
+// MARK: - Presenter
+final class GreetingScenePresenter {
     weak var greetingSceneViewDelegate: GreetingSceneViewDelegate?
     
     func didReceive(name: String?) {

@@ -7,17 +7,12 @@
 
 import UIKit
 
-// MARK: - Protocols
-protocol InitialSceneViewDelegate: NSObjectProtocol {
-    func proceedToGreetingScene(with name: String)
-}
-
-// MARK: - Implementations
-class InitialScenePresenter {
-    weak var initialSceneViewDelegate: InitialSceneViewDelegate?
+// MARK: - Presenter
+final class InitialScenePresenter {
+    weak var viewDelegate: InitialSceneViewDelegate?
     
     func didInputName(name: String?) {
         guard let name = name, name != "" else { return }
-        initialSceneViewDelegate?.proceedToGreetingScene(with: name)
+        viewDelegate?.proceedToGreetingScene(with: name)
     }
 }

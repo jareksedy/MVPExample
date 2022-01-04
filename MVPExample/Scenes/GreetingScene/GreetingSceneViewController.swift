@@ -7,6 +7,19 @@
 
 import UIKit
 
+// MARK: - Protocol
+protocol GreetingSceneViewDelegate: NSObjectProtocol {
+    func presentGreeting(with name: String)
+}
+
+// MARK: - Implementation
+extension GreetingSceneViewController: GreetingSceneViewDelegate {
+    func presentGreeting(with name: String) {
+        nameLabel.text = name
+    }
+}
+
+// MARK: - View
 class GreetingSceneViewController: UIViewController {
     let presenter = GreetingScenePresenter()
     
@@ -17,19 +30,9 @@ class GreetingSceneViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     
     // MARK: - Lifecycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presenter.didReceive(name: name)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.greetingSceneViewDelegate = self
-    }
-}
-
-// MARK: - Extensions
-extension GreetingSceneViewController: GreetingSceneViewDelegate {
-    func presentGreeting(with name: String) {
-        nameLabel.text = name
+        presenter.didReceive(name: name)
     }
 }
