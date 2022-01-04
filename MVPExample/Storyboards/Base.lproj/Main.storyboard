@@ -8,40 +8,108 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial Scene View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MVPExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialScene" id="BYZ-38-t0r" customClass="InitialSceneViewController" customModule="MVPExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ka-mk-Rwm">
+                                <rect key="frame" x="25" y="69" width="364" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhn-pg-5nS">
+                                <rect key="frame" x="25" y="123" width="364" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Iuz-9f-05R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzm-a7-bIh">
+                                <rect key="frame" x="25" y="223" width="364" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Продолжить"/>
+                                <connections>
+                                    <action selector="proceedButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9gA-q3-LfW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Ka-mk-Rwm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="947-gQ-X1z"/>
+                            <constraint firstItem="zzm-a7-bIh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="KSZ-d4-PXd"/>
+                            <constraint firstItem="0Ka-mk-Rwm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="R9W-YL-GcA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zzm-a7-bIh" secondAttribute="trailing" constant="25" id="a4i-ZB-Dxu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ka-mk-Rwm" secondAttribute="trailing" constant="25" id="bew-Cl-6bO"/>
+                            <constraint firstItem="qhn-pg-5nS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="ewY-6q-4uj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qhn-pg-5nS" secondAttribute="trailing" constant="25" id="gYp-eQ-q4m"/>
+                            <constraint firstItem="qhn-pg-5nS" firstAttribute="top" secondItem="0Ka-mk-Rwm" secondAttribute="bottom" constant="25" id="mMC-Od-NPs"/>
+                            <constraint firstItem="zzm-a7-bIh" firstAttribute="top" secondItem="qhn-pg-5nS" secondAttribute="bottom" constant="50" id="rcW-lh-SXk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="qhn-pg-5nS" id="Iqz-EC-h9s"/>
+                        <outlet property="proceedButton" destination="zzm-a7-bIh" id="vNW-42-NVL"/>
+                        <segue destination="Agk-Nz-loA" kind="show" identifier="toGreetingScene" id="jJS-eZ-s5J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Greeting Scene View Controller-->
         <scene sceneID="VG2-q8-NPJ">
             <objects>
-                <viewController id="Agk-Nz-loA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GreetingScene" id="Agk-Nz-loA" customClass="GreetingSceneViewController" customModule="MVPExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="76u-Vr-Rif">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вэлком!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJN-Q5-3Et">
+                                <rect key="frame" x="25" y="25" width="364" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Юзернейм!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytk-Mu-BGE">
+                                <rect key="frame" x="25" y="59" width="364" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Te7-w0-l6p"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Te7-w0-l6p" firstAttribute="trailing" secondItem="Ytk-Mu-BGE" secondAttribute="trailing" constant="25" id="0bA-jA-hFp"/>
+                            <constraint firstItem="WJN-Q5-3Et" firstAttribute="leading" secondItem="Te7-w0-l6p" secondAttribute="leading" constant="25" id="AMg-d6-OLa"/>
+                            <constraint firstItem="WJN-Q5-3Et" firstAttribute="top" secondItem="Te7-w0-l6p" secondAttribute="top" constant="25" id="FQH-D4-7TL"/>
+                            <constraint firstItem="Ytk-Mu-BGE" firstAttribute="leading" secondItem="Te7-w0-l6p" secondAttribute="leading" constant="25" id="VwG-Zb-Pk2"/>
+                            <constraint firstItem="Te7-w0-l6p" firstAttribute="trailing" secondItem="WJN-Q5-3Et" secondAttribute="trailing" constant="25" id="l5T-4p-8ll"/>
+                            <constraint firstItem="Ytk-Mu-BGE" firstAttribute="top" secondItem="WJN-Q5-3Et" secondAttribute="bottom" constant="5" id="loZ-C2-UR7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6KC-TE-O84"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcj-di-B6I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="138"/>
+            <point key="canvasLocation" x="843" y="138"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
