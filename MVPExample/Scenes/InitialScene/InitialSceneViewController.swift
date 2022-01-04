@@ -28,10 +28,14 @@ class InitialSceneViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func proceedButtonTapped(_ sender: Any) {
+        
     }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+extension InitialSceneViewController: InitialSceneInput {
 }
