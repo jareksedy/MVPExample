@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAB447932784680D007C5D71 /* InitialSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB447922784680C007C5D71 /* InitialSceneViewController.swift */; };
+		CAB4479627846865007C5D71 /* GreetingSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4479527846865007C5D71 /* GreetingSceneViewController.swift */; };
 		CAB962AD2784650600933C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB962AC2784650600933C06 /* AppDelegate.swift */; };
 		CAB962AF2784650600933C06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB962AE2784650600933C06 /* SceneDelegate.swift */; };
 		CAB962B42784650600933C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB962B22784650600933C06 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CAB447922784680C007C5D71 /* InitialSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneViewController.swift; sourceTree = "<group>"; };
+		CAB4479527846865007C5D71 /* GreetingSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GreetingSceneViewController.swift; path = "MVPExample/Scenes/New Group/GreetingSceneViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CAB962A92784650600933C06 /* MVPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB962AC2784650600933C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAB962AE2784650600933C06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +39,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAB44791278467DE007C5D71 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CAB447942784683D007C5D71 /* InitialScene */,
+				CAB4479727846869007C5D71 /* GreetingScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CAB447942784683D007C5D71 /* InitialScene */ = {
+			isa = PBXGroup;
+			children = (
+				CAB447922784680C007C5D71 /* InitialSceneViewController.swift */,
+			);
+			path = InitialScene;
+			sourceTree = "<group>";
+		};
+		CAB4479727846869007C5D71 /* GreetingScene */ = {
+			isa = PBXGroup;
+			children = (
+				CAB4479527846865007C5D71 /* GreetingSceneViewController.swift */,
+			);
+			path = GreetingScene;
+			sourceTree = "<group>";
+		};
 		CAB962A02784650600933C06 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +87,7 @@
 				CAB962AE2784650600933C06 /* SceneDelegate.swift */,
 				CAB962C22784658800933C06 /* Configuration */,
 				CAB962C12784657E00933C06 /* Resources */,
+				CAB44791278467DE007C5D71 /* Scenes */,
 				CAB962C02784656C00933C06 /* Storyboards */,
 			);
 			path = MVPExample;
@@ -159,7 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAB447932784680D007C5D71 /* InitialSceneViewController.swift in Sources */,
 				CAB962AD2784650600933C06 /* AppDelegate.swift in Sources */,
+				CAB4479627846865007C5D71 /* GreetingSceneViewController.swift in Sources */,
 				CAB962AF2784650600933C06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
