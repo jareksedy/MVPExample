@@ -8,26 +8,16 @@
 import UIKit
 
 // MARK: - Protocols
-protocol InitialSceneInput: AnyObject {
+protocol InitialSceneViewDelegate: NSObjectProtocol {
+    func proceedToGreetingScene(with name: String)
+}
+
+// MARK: - Implementations
+class InitialScenePresenter {
+    weak var initialSceneViewDelegate: InitialSceneViewDelegate?
     
-}
-
-protocol InitialSceneOutput: AnyObject {
-    func viewDidInputName(with name: String)
-}
-
-// MARK: - Implementation
-final class InitialScenePresenter {
-    weak var viewInput: (UIViewController & InitialSceneInput)?
-    
-    private func goToGreetingScene() {
-        viewInput?.performSegue(withIdentifier: "toGreetingScene", sender: nil)
-    }
-}
-
-// MARK: - Extensions
-extension InitialScenePresenter: InitialSceneOutput {
-    func viewDidInputName(with name: String) {
-        goToGreetingScene()
+    func didInputName(name: String?) {
+        guard let name = name, name != "" else { return }
+        initialSceneViewDelegate?.proceedToGreetingScene(with: name)
     }
 }

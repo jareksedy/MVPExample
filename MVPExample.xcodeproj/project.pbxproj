@@ -10,7 +10,7 @@
 		CAB447932784680D007C5D71 /* InitialSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB447922784680C007C5D71 /* InitialSceneViewController.swift */; };
 		CAB44799278468CC007C5D71 /* GreetingSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB44798278468CC007C5D71 /* GreetingSceneViewController.swift */; };
 		CAB4479B27846A9A007C5D71 /* InitialScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4479A27846A9A007C5D71 /* InitialScenePresenter.swift */; };
-		CAB4479D27847531007C5D71 /* InitialSceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4479C27847531007C5D71 /* InitialSceneBuilder.swift */; };
+		CAB4479F27848E8F007C5D71 /* GreetingScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4479E27848E8F007C5D71 /* GreetingScenePresenter.swift */; };
 		CAB962AD2784650600933C06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB962AC2784650600933C06 /* AppDelegate.swift */; };
 		CAB962AF2784650600933C06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB962AE2784650600933C06 /* SceneDelegate.swift */; };
 		CAB962B42784650600933C06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAB962B22784650600933C06 /* Main.storyboard */; };
@@ -22,7 +22,7 @@
 		CAB447922784680C007C5D71 /* InitialSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneViewController.swift; sourceTree = "<group>"; };
 		CAB44798278468CC007C5D71 /* GreetingSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingSceneViewController.swift; sourceTree = "<group>"; };
 		CAB4479A27846A9A007C5D71 /* InitialScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScenePresenter.swift; sourceTree = "<group>"; };
-		CAB4479C27847531007C5D71 /* InitialSceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSceneBuilder.swift; sourceTree = "<group>"; };
+		CAB4479E27848E8F007C5D71 /* GreetingScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingScenePresenter.swift; sourceTree = "<group>"; };
 		CAB962A92784650600933C06 /* MVPExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB962AC2784650600933C06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAB962AE2784650600933C06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +55,6 @@
 		CAB447942784683D007C5D71 /* InitialScene */ = {
 			isa = PBXGroup;
 			children = (
-				CAB4479C27847531007C5D71 /* InitialSceneBuilder.swift */,
 				CAB447922784680C007C5D71 /* InitialSceneViewController.swift */,
 				CAB4479A27846A9A007C5D71 /* InitialScenePresenter.swift */,
 			);
@@ -66,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB44798278468CC007C5D71 /* GreetingSceneViewController.swift */,
+				CAB4479E27848E8F007C5D71 /* GreetingScenePresenter.swift */,
 			);
 			path = GreetingScene;
 			sourceTree = "<group>";
@@ -198,8 +198,8 @@
 				CAB447932784680D007C5D71 /* InitialSceneViewController.swift in Sources */,
 				CAB962AD2784650600933C06 /* AppDelegate.swift in Sources */,
 				CAB44799278468CC007C5D71 /* GreetingSceneViewController.swift in Sources */,
-				CAB4479D27847531007C5D71 /* InitialSceneBuilder.swift in Sources */,
 				CAB4479B27846A9A007C5D71 /* InitialScenePresenter.swift in Sources */,
+				CAB4479F27848E8F007C5D71 /* GreetingScenePresenter.swift in Sources */,
 				CAB962AF2784650600933C06 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,34 +8,29 @@
 import UIKit
 
 class InitialSceneViewController: UIViewController {
+    let presenter = InitialScenePresenter()
     
     // MARK: - Outlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var proceedButton: UIButton!
-    
-    // MARK: - Presenter
-    private let presenter: InitialSceneOutput
-    
-    // MARK: - Initialization
-    init(presenter: InitialSceneOutput) {
-        self.presenter = presenter
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     // MARK: - Actions
     @IBAction func proceedButtonTapped(_ sender: Any) {
-        
+        presenter.didInputName(name: nameTextField?.text)
     }
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter.initialSceneViewDelegate = self
     }
 }
 
-extension InitialSceneViewController: InitialSceneInput {
+// MARK: - Extensions
+extension InitialSceneViewController: InitialSceneViewDelegate {
+    func proceedToGreetingScene(with name: String) {
+        let greetingSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "GreetingScene") as! GreetingSceneViewController
+        greetingSceneViewController.name = name
+        navigationController?.pushViewController(greetingSceneViewController, animated: true)
+    }
 }
